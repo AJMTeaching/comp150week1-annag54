@@ -14,6 +14,16 @@ print("reversed list"), my_list
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
 
 # Problem 2
+person = {'name': 'John', 'age': 30, 'job': 'teacher'}
+print("job:", person['job'])
+person['city'] = 'Paris'
+print["updated dictionary after adding 'city':", person]
+del person['age']
+print("updated person after removing 'age':", person)
+print("final dictionary contents:")
+for key, value in person.items():
+    print(f"{key}: {value}")
+
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
 
 # -----------------------------------------------------------------------------
