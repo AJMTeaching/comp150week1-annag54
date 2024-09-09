@@ -2,6 +2,15 @@
 
 # Lab 1
 # Problem 1
+my_list = [1,5,'apple',20.5]
+print("value at index 2", my_list[2])
+my_list.append(10)
+print("list after appending 10", my_list)
+my_list.remove(20.5)
+print("list after removing 20.5", my_list)
+my_list.reverse()
+print("reversed list"), my_list
+
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
 
 # Problem 2
@@ -34,10 +43,16 @@ def count_vowels(s: str) -> int:
     - int: The number of vowels in the string
     """
     # TODO: Implement this function
+
     pass
-
-
 # Unit Tests for count_vowels
+
+def test_count_vowel(s):
+    vowels = "aeiouAEIOU"
+    count = 0 
+    for char in s:
+        if char in vowels:
+            count += 1
 def test_count_vowels():
     test(count_vowels("hello") == 2)
     test(count_vowels("why") == 0)
@@ -49,6 +64,7 @@ def test_count_vowels():
     test(count_vowels("aEiOu") == 5)
     test(count_vowels("a e i o u") == 5)
     test(count_vowels("rhythm") == 0)
+    print("All test cases passed.")
 
 
 # Function 2: merge_lists
@@ -81,7 +97,7 @@ def test_merge_lists():
     test(merge_lists([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6])
     test(merge_lists([1, 3, 5, 7, 9], [2, 4, 6, 8, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     test(merge_lists([1, 1, 2, 3], [1, 2, 2, 3]) == [1, 1, 1, 2, 2, 2, 3, 3])
-
+    print("all test cases passed.")
 
 # Function 3: word_lengths
 def word_lengths(words: list) -> list:
@@ -96,7 +112,22 @@ def word_lengths(words: list) -> list:
     """
     # TODO: Implement this function
     pass
-
+def word_lengths(words):
+    lengths = []
+    for word in words:
+        length = len(word)
+        lengths.append(length)
+        return lengths
+def test_word_lengths():
+    words = ["hello", "world", "python"]
+    lengths = word_lengths(words)
+    test(lengths == [5, 5, 6])
+    test(word_lengths([]) == [])
+    test(word_lengths(["word"]) == [4])
+    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 11])
+    test(word_lengths(["", "a", "ab", "abc"]) == [0, 1, 2, 3])
+    test(word_lengths(["  ", "a b", " c "]) == [2, 3, 3])
+    print("all test case passed.")
 
 # Unit Tests for word_lengths
 def test_word_lengths():
@@ -105,7 +136,7 @@ def test_word_lengths():
     test(lengths == [5, 5, 6])
     test(word_lengths([]) == [])
     test(word_lengths(["word"]) == [4])
-    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 10])
+    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 11])
     test(word_lengths(["", "a", "ab", "abc"]) == [0, 1, 2, 3])
     test(word_lengths(["  ", "a b", " c "]) == [2, 3, 3])
 
@@ -152,7 +183,24 @@ def intersection(list1: list, list2: list) -> list:
     """
     # TODO: Implement this function
     pass
-
+def intersection(list1, list2):
+    result = []
+    for item in list1:
+        if item in list2 and item not in result:
+            result.append(item)
+        return result
+def test_intersection():
+    list1 = [1, 2, 3, 4]
+    list2 = [3, 4, 5, 6]
+    result = intersection(list1, list2)
+    test(result == [3, 4])
+    test(intersection([], []) == [])
+    test(intersection([1, 2], [3, 4]) == [])
+    test(intersection([1, 2], [1, 2]) == [1, 2])
+    test(intersection([1, 2, 2, 3], [2, 2, 3, 4]) == [2, 3])
+    test(intersection([1, 2, 3], [4, 5, 6]) == [])
+    test(intersection([1, 2, 3], [1, 2, 3]) == [1, 2, 3])
+    print('all tests passed')
 
 # Unit Tests for intersection
 def test_intersection():
