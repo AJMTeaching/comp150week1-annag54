@@ -2,14 +2,19 @@
 
 # Lab 1
 # Problem 1
+Create a list called my_list with the values [1, 5, 'apple', 20.5].
 my_list = [1,5,'apple',20.5]
-print("value at index 2", my_list[2])
-my_list.append(10)
-print("list after appending 10", my_list)
-my_list.remove(20.5)
+Using indexing, print the value 'apple' from my_list.
+print(my_list[2])
+Add the value 10 to the end of my_list using the append() method. Print the updated list.
+ my_list.append(10)
+    print(my_list)
+Remove the value 20.5 from my_list using the remove() method. Print the updated list.
+    my_list.remove(20.5)
 print("list after removing 20.5", my_list)
+Reverse the order of the elements in my_list using a method. Print the reversed list.
 my_list.reverse()
-print("reversed list"), my_list
+print(my_list_reversed)
 
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
 
