@@ -174,8 +174,13 @@ def reverse_string(s: str) -> str:
     Returns:
     - str: The reversed string
     """
-    # TODO: Implement this function
-    pass
+
+def reverse_string(s): 
+        if len(s) == 0:
+            return s
+        else:
+            return s[-1] + reverse_string(s[:-1])
+
 
 
 # Unit Tests for reverse_string
